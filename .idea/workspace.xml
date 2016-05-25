@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="29766b55-fa9f-4505-ba78-d9ec1d35dbee" name="Default" comment="" />
+    <list default="true" id="29766b55-fa9f-4505-ba78-d9ec1d35dbee" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="TravelManagementSystem.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,11 +25,11 @@
     <favorites_list name="TravelManagementSystem" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="SystemManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SystemManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.857143">
+            <state vertical-scroll-proportion="0.0">
               <caret line="34" column="59" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -35,134 +38,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JAVA/airline.factories.AirlineFactory" pinned="false" current-in-tab="true">
-        <entry file="uml://JAVA/airline.factories.AirlineFactory">
-          <provider selected="true" editor-type-id="UmlEditorProvider">
-            <state>
-              <ID>JAVA</ID>
-              <OriginalElement>airline.factories.AirlineFactory</OriginalElement>
-              <nodes>
-                <node x="463.0" y="78.0">interfaces.TripFactory</node>
-                <node x="315.75" y="156.0">airline.factories.AirlineFactory</node>
-                <node x="584.0" y="78.0">airline.Flight</node>
-                <node x="373.0" y="78.0">airline.Airline</node>
-                <node x="527.75" y="156.0">airline.factories.FlightFactory</node>
-                <node x="0.0" y="78.0">interfaces.PortFactory</node>
-                <node x="317.25" y="332.0">SampleClient</node>
-                <node x="606.0" y="0.0">interfaces.Trip</node>
-                <node x="124.0" y="78.0">airline.Airport</node>
-                <node x="307.75" y="254.0">SystemManager</node>
-                <node x="338.35087719298247" y="0.0">java.lang.Comparable</node>
-                <node x="218.0" y="78.0">interfaces.CompanyFactory</node>
-                <node x="14.5" y="405.0">java.util.Iterator</node>
-                <node x="0.0" y="483.0">utility.Incrementor</node>
-                <node x="65.75000000000006" y="156.0">airline.factories.AirportFactory</node>
-              </nodes>
-              <notes />
-              <edges>
-                <edge source="utility.Incrementor" target="java.util.Iterator">
-                  <point x="0.0" y="-14.0" />
-                  <point x="0.0" y="14.0" />
-                </edge>
-                <edge source="SystemManager" target="airline.factories.AirlineFactory">
-                  <point x="0.0" y="0.0" />
-                  <point x="0.0" y="0.0" />
-                </edge>
-                <edge source="SystemManager" target="interfaces.PortFactory">
-                  <point x="0.0" y="0.0" />
-                  <point x="0.0" y="0.0" />
-                </edge>
-                <edge source="SystemManager" target="airline.Flight">
-                  <point x="0.0" y="0.0" />
-                  <point x="0.0" y="0.0" />
-                </edge>
-                <edge source="SystemManager" target="interfaces.CompanyFactory">
-                  <point x="0.0" y="0.0" />
-                  <point x="0.0" y="0.0" />
-                </edge>
-                <edge source="SystemManager" target="airline.factories.AirportFactory">
-                  <point x="0.0" y="0.0" />
-                  <point x="0.0" y="0.0" />
-                </edge>
-                <edge source="SystemManager" target="airline.factories.FlightFactory">
-                  <point x="0.0" y="0.0" />
-                  <point x="0.0" y="0.0" />
-                </edge>
-                <edge source="airline.Flight" target="java.lang.Comparable">
-                  <point x="-16.5" y="-14.0" />
-                  <point x="600.5" y="53.0" />
-                  <point x="427.5175438596491" y="53.0" />
-                  <point x="35.66666666666663" y="14.0" />
-                </edge>
-                <edge source="SystemManager" target="interfaces.TripFactory">
-                  <point x="0.0" y="0.0" />
-                  <point x="0.0" y="0.0" />
-                </edge>
-                <edge source="SystemManager" target="airline.Airport">
-                  <point x="0.0" y="0.0" />
-                  <point x="0.0" y="0.0" />
-                </edge>
-                <edge source="airline.factories.AirportFactory" target="airline.Airport">
-                  <point x="0.0" y="0.0" />
-                  <point x="0.0" y="0.0" />
-                </edge>
-                <edge source="airline.factories.AirlineFactory" target="interfaces.CompanyFactory">
-                  <point x="-38.66666666666663" y="-14.0" />
-                  <point x="335.08333333333337" y="131.0" />
-                  <point x="319.25" y="131.0" />
-                  <point x="33.75" y="14.0" />
-                </edge>
-                <edge source="airline.factories.AirlineFactory" target="airline.Airline">
-                  <point x="0.0" y="0.0" />
-                  <point x="0.0" y="0.0" />
-                </edge>
-                <edge source="SystemManager" target="airline.Airline">
-                  <point x="0.0" y="0.0" />
-                  <point x="0.0" y="0.0" />
-                </edge>
-                <edge source="airline.factories.FlightFactory" target="airline.Flight">
-                  <point x="0.0" y="0.0" />
-                  <point x="0.0" y="0.0" />
-                </edge>
-                <edge source="SampleClient" target="SystemManager">
-                  <point x="0.0" y="0.0" />
-                  <point x="0.0" y="0.0" />
-                </edge>
-                <edge source="airline.factories.FlightFactory" target="interfaces.TripFactory">
-                  <point x="-37.33333333333337" y="-14.0" />
-                  <point x="546.4166666666666" y="131.0" />
-                  <point x="538.75" y="131.0" />
-                  <point x="25.25" y="14.0" />
-                </edge>
-                <edge source="airline.Airline" target="java.lang.Comparable">
-                  <point x="0.0" y="-14.0" />
-                  <point x="408.0" y="53.0" />
-                  <point x="391.85087719298247" y="53.0" />
-                  <point x="0.0" y="14.0" />
-                </edge>
-                <edge source="airline.factories.AirportFactory" target="interfaces.PortFactory">
-                  <point x="-40.0" y="-14.0" />
-                  <point x="85.75000000000006" y="131.0" />
-                  <point x="78.0" y="131.0" />
-                  <point x="26.0" y="14.0" />
-                </edge>
-                <edge source="airline.Airport" target="java.lang.Comparable">
-                  <point x="0.0" y="-14.0" />
-                  <point x="161.0" y="53.0" />
-                  <point x="356.1842105263158" y="53.0" />
-                  <point x="-35.666666666666686" y="14.0" />
-                </edge>
-                <edge source="airline.Flight" target="interfaces.Trip">
-                  <point x="16.5" y="-14.0" />
-                  <point x="0.0" y="14.0" />
-                </edge>
-              </edges>
-              <settings layout="Hierarchic Group" zoom="1.0" x="580.0" y="205.0" />
-              <SelectedNodes />
-              <Categories />
-              <SCOPE>All</SCOPE>
-              <VISIBILITY>private</VISIBILITY>
+      <file leaf-file-name="README" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="72" selection-start-line="0" selection-start-column="72" selection-end-line="0" selection-end-column="72" />
+              <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProjectDiagram.png" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ProjectDiagram.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -198,6 +87,17 @@
         <option value="Interface" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="master" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_USER" value="hamstak" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="TravelManagementSystem" />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -242,6 +142,7 @@
         <option value="$PROJECT_DIR$/src/airline/Airline.java" />
         <option value="$PROJECT_DIR$/src/airline/Airport.java" />
         <option value="$PROJECT_DIR$/src/SystemManager.java" />
+        <option value="$PROJECT_DIR$/README" />
       </list>
     </option>
   </component>
@@ -287,8 +188,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -321,84 +220,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TravelManagementSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TravelManagementSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="utility" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TravelManagementSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TravelManagementSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="interfaces" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TravelManagementSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TravelManagementSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="airline" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TravelManagementSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TravelManagementSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="airline" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="factories" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -408,6 +233,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+    <property name="GO_FMT" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -926,6 +752,11 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -1072,29 +903,39 @@
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="29766b55-fa9f-4505-ba78-d9ec1d35dbee" name="Default" comment="" />
       <created>1463944174467</created>
       <option name="number" value="Default" />
       <updated>1463944174467</updated>
-      <workItem from="1463944179516" duration="23122000" />
+      <workItem from="1463944179516" duration="23507000" />
+      <workItem from="1464108021939" duration="2280000" />
     </task>
+    <task id="LOCAL-00001" summary="Added README">
+      <created>1464108283457</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1464108283457</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23122000" />
+    <option name="totallyTimeSpent" value="25787000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1600" height="875" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39897698" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1105,17 +946,30 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.4975" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
     </layout>
   </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added README" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added README" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1136,6 +990,35 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/SystemManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/airline/Airline.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/airline/Airport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+          <folding>
+            <element signature="e#812#813#0" expanded="true" />
+            <element signature="e#853#854#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/utility/Incrementor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1148,7 +1031,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1177,7 +1059,7 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="0.8559670781893004" x="-190.61538461538458" y="350.3846153846154" />
+          <settings layout="Hierarchic Group" zoom="0.8559670781893004" x="-191.0" y="350.0" />
           <SelectedNodes>
             <node>netscape</node>
           </SelectedNodes>
@@ -1273,13 +1155,13 @@
               <point x="-58.0" y="-0.0" />
               <point x="35.0" y="-0.0" />
             </edge>
-            <edge source="airline.factories.FlightFactory" target="airline.Flight">
-              <point x="-56.0" y="-0.0" />
-              <point x="33.0" y="-0.0" />
-            </edge>
             <edge source="SystemManager" target="airline.Airline">
               <point x="0.0" y="14.0" />
               <point x="0.0" y="-14.0" />
+            </edge>
+            <edge source="airline.factories.FlightFactory" target="airline.Flight">
+              <point x="-56.0" y="-0.0" />
+              <point x="33.0" y="-0.0" />
             </edge>
             <edge source="airline.Flight" target="airline.seats.Section">
               <point x="0.0" y="-14.0" />
@@ -1295,17 +1177,17 @@
               <point x="360.0" y="640.0" />
               <point x="0.0" y="14.0" />
             </edge>
-            <edge source="airline.seats.Section" target="airline.seats.SeatClass">
-              <point x="-39.5" y="-0.0" />
-              <point x="47.0" y="-0.0" />
-            </edge>
             <edge source="airline.Airport" target="java.lang.Comparable">
               <point x="-37.0" y="-0.0" />
               <point x="400.0" y="560.0" />
               <point x="40.0" y="14.0" />
             </edge>
+            <edge source="airline.seats.Section" target="airline.seats.SeatClass">
+              <point x="-39.5" y="-0.0" />
+              <point x="47.0" y="-0.0" />
+            </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="0.7303393213572854" x="127.9467077889787" y="118.68265709353824" />
+          <settings layout="Hierarchic Group" zoom="0.7303393213572854" x="128.0" y="119.0" />
           <SelectedNodes>
             <node>SystemManager</node>
           </SelectedNodes>
@@ -1420,10 +1302,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21854305">
           <caret line="234" column="18" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
-          <folding>
-            <element signature="e#10065#10066#0" expanded="false" />
-            <element signature="e#10148#10149#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1523,11 +1401,11 @@
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
-            <edge source="SystemManager" target="airline.Airline">
+            <edge source="airline.factories.FlightFactory" target="airline.Flight">
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
-            <edge source="airline.factories.FlightFactory" target="airline.Flight">
+            <edge source="SystemManager" target="airline.Airline">
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
@@ -1535,14 +1413,14 @@
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
-            <edge source="airline.factories.FlightFactory" target="interfaces.TripFactory">
-              <point x="0.0" y="-14.0" />
-              <point x="0.0" y="14.0" />
-            </edge>
             <edge source="airline.Airline" target="java.lang.Comparable">
               <point x="0.0" y="-14.0" />
               <point x="120.0" y="0.0" />
               <point x="-53.5" y="-0.0" />
+            </edge>
+            <edge source="airline.factories.FlightFactory" target="interfaces.TripFactory">
+              <point x="0.0" y="-14.0" />
+              <point x="0.0" y="14.0" />
             </edge>
             <edge source="airline.factories.AirportFactory" target="interfaces.PortFactory">
               <point x="0.0" y="-14.0" />
@@ -1569,7 +1447,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SystemManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.857143">
+        <state vertical-scroll-proportion="0.0">
           <caret line="34" column="59" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1657,11 +1535,11 @@
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
-            <edge source="SystemManager" target="airline.Airline">
+            <edge source="airline.factories.FlightFactory" target="airline.Flight">
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
-            <edge source="airline.factories.FlightFactory" target="airline.Flight">
+            <edge source="SystemManager" target="airline.Airline">
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
@@ -1669,17 +1547,17 @@
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
-            <edge source="airline.factories.FlightFactory" target="interfaces.TripFactory">
-              <point x="-37.33333333333337" y="-14.0" />
-              <point x="546.4166666666666" y="131.0" />
-              <point x="538.75" y="131.0" />
-              <point x="25.25" y="14.0" />
-            </edge>
             <edge source="airline.Airline" target="java.lang.Comparable">
               <point x="0.0" y="-14.0" />
               <point x="408.0" y="53.0" />
               <point x="391.85087719298247" y="53.0" />
               <point x="0.0" y="14.0" />
+            </edge>
+            <edge source="airline.factories.FlightFactory" target="interfaces.TripFactory">
+              <point x="-37.33333333333337" y="-14.0" />
+              <point x="546.4166666666666" y="131.0" />
+              <point x="538.75" y="131.0" />
+              <point x="25.25" y="14.0" />
             </edge>
             <edge source="airline.factories.AirportFactory" target="interfaces.PortFactory">
               <point x="-40.0" y="-14.0" />
@@ -1704,6 +1582,19 @@
           <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="72" selection-start-line="0" selection-start-column="72" selection-end-line="0" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjectDiagram.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
   </component>
