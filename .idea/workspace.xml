@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="29766b55-fa9f-4505-ba78-d9ec1d35dbee" name="Default" comment="Started increasing menu functionality&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AdministratorClient.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DefaultSystemManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SeaSystemManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utility/UserUtil.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/SystemManager.java" afterPath="$PROJECT_DIR$/src/AirSystemManager.java" />
+    <list default="true" id="29766b55-fa9f-4505-ba78-d9ec1d35dbee" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SampleClient.java" afterPath="$PROJECT_DIR$/src/SampleClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SystemManager.java" afterPath="$PROJECT_DIR$/src/SystemManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/airline/seats/SeatClass.java" afterPath="$PROJECT_DIR$/src/airline/seats/SeatClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DefaultSystemManager.java" afterPath="$PROJECT_DIR$/src/DefaultSystemManager.java" />
     </list>
     <ignored path="TravelManagementSystem.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,8 +65,8 @@
       <file leaf-file-name="DefaultSystemManager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DefaultSystemManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.50463575">
-              <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.35629138">
+              <caret line="27" column="70" selection-start-line="27" selection-start-column="70" selection-end-line="27" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1092,7 +1085,7 @@
       <workItem from="1464797594364" duration="2315000" />
       <workItem from="1464815819980" duration="4883000" />
       <workItem from="1464886911489" duration="18000" />
-      <workItem from="1465253919842" duration="481000" />
+      <workItem from="1465253919842" duration="520000" />
     </task>
     <task id="LOCAL-00001" summary="Added README">
       <created>1464108283457</created>
@@ -1112,11 +1105,17 @@
       <option name="project" value="LOCAL" />
       <updated>1464194593040</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Started increasing menu functionality&#10;">
+      <created>1465254413833</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1465254413833</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37283000" />
+    <option name="totallyTimeSpent" value="37322000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1600" height="875" extended-state="6" />
@@ -1994,8 +1993,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DefaultSystemManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50463575">
-          <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.35629138">
+          <caret line="27" column="70" selection-start-line="27" selection-start-column="70" selection-end-line="27" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

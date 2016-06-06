@@ -21,15 +21,11 @@ public class DefaultSystemManager implements SystemManager {
                 case 1: if (systemMap.get("Air") == null)
                             systemMap.put("Air", new AirSystemManager());
                         return systemMap.get("Air");
-                    break;
                 case 2: if (systemMap.get("Sea") == null)
                             systemMap.put("Sea", new SeaSystemManager());
                         return systemMap.get("Sea");
-                    break;
                 case 3: return displaySystemDetails("Air", systemMap);
-                    break;
                 case 4: return displaySystemDetails("Sea", systemMap);
-                    break;
                 case 5: System.exit(0);
             }
         }while (option != 5);
