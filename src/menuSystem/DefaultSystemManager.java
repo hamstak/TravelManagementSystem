@@ -1,3 +1,5 @@
+package menuSystem;
+
 import utility.UserUtil;
 
 import java.util.HashMap;
@@ -28,7 +30,7 @@ public class DefaultSystemManager implements SystemManager {
                 case 4: return displaySystemDetails("Sea", systemMap);
                 case 5: System.exit(0);
             }
-        }while (option != 5);
+        }while (option > 0);
         return null;
     }
 

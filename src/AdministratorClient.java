@@ -1,8 +1,7 @@
-import utility.UserUtil;
+import menuSystem.DefaultSystemManager;
+import menuSystem.SystemManager;
 
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Created by moth on 6/1/16.
@@ -13,8 +12,11 @@ public class AdministratorClient {
         int option;
         HashMap<String, SystemManager> systemMap = new HashMap<>();
         SystemManager system = new DefaultSystemManager();
-        while (true)
-            system = system.runMenu(systemMap);
-
+        try{
+            while (true)
+                system = system.runMenu(systemMap);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }

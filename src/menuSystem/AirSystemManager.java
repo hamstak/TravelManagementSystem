@@ -1,3 +1,5 @@
+package menuSystem;
+
 import airline.Airline;
 import airline.Airport;
 import airline.Flight;

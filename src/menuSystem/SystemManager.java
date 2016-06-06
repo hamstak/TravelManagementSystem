@@ -1,3 +1,5 @@
+package menuSystem;
+
 import java.util.HashMap;
 
 /**

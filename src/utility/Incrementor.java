@@ -7,7 +7,7 @@ import java.util.Iterator;
 /**
  * Created by moth on 5/23/16.
  */
-public abstract class Incrementor implements Iterator<Integer>{
+public class Incrementor implements Iterator<Integer>{
     private int current = 0;
     private static Incrementor instance;
     private Incrementor(){
