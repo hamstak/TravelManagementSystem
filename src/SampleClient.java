@@ -5,7 +5,7 @@ public class SampleClient {
     public static void main(String[] args) {
         // TODO Auto-generated method stub
 
-        SystemManager res = new SystemManager();
+        AirSystemManager res = new AirSystemManager();
         res.createAirport("DEN");
         res.createAirport("DFW");
         res.createAirport("LON");
