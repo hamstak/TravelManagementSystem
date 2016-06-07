@@ -67,7 +67,7 @@ public class AirSystemManager implements SystemManager {
         }
         for (Flight flight : flightFactory.getTrips()){
             if (flight.getID().compareTo(flightID) == 0 && flight.checkSeats(s) == null){
-                flight.addSection(new Section(rows, cols, s));
+                flight.addSection(new Section(null, null, null, null));
             }
         }
     }

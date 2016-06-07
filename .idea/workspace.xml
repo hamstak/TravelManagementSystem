@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29766b55-fa9f-4505-ba78-d9ec1d35dbee" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/airline/seats/Seat.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/airline/seats/SectionLayout.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/TravelManagementSystem/SystemManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/TravelManagementSystem/airline/factories/CompanyFactory.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TravelManagementSystem/SampleClient.class" afterPath="$PROJECT_DIR$/out/production/TravelManagementSystem/SampleClient.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TravelManagementSystem/airline/Airline.class" afterPath="$PROJECT_DIR$/out/production/TravelManagementSystem/airline/Airline.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TravelManagementSystem/airline/Airport.class" afterPath="$PROJECT_DIR$/out/production/TravelManagementSystem/airline/Airport.class" />
@@ -18,10 +14,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TravelManagementSystem/interfaces/Trip.class" afterPath="$PROJECT_DIR$/out/production/TravelManagementSystem/interfaces/Trip.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TravelManagementSystem/utility/Incrementor.class" afterPath="$PROJECT_DIR$/out/production/TravelManagementSystem/utility/Incrementor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/airline/seats/SeatClass.java" afterPath="$PROJECT_DIR$/src/airline/seats/SeatClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/airline/seats/Section.java" afterPath="$PROJECT_DIR$/src/airline/seats/Section.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/menuSystem/AirSystemManager.java" afterPath="$PROJECT_DIR$/src/menuSystem/AirSystemManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/menuSystem/DefaultSystemManager.java" afterPath="$PROJECT_DIR$/src/menuSystem/DefaultSystemManager.java" />
     </list>
     <ignored path="TravelManagementSystem.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,8 +40,8 @@
       <file leaf-file-name="AirSystemManager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/menuSystem/AirSystemManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0724347">
-              <caret line="69" column="59" selection-start-line="69" selection-start-column="59" selection-end-line="69" selection-end-column="59" />
+            <state vertical-scroll-proportion="0.7826962">
+              <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -122,7 +115,7 @@
         <entry file="file://$PROJECT_DIR$/src/airline/seats/Section.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="61" column="31" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
+              <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
               <folding>
                 <element signature="e#1537#1538#0" expanded="true" />
                 <element signature="e#1572#1573#0" expanded="true" />
@@ -212,13 +205,13 @@
         <option value="$PROJECT_DIR$/src/AdministratorClient.java" />
         <option value="$PROJECT_DIR$/src/utility/Incrementor.java" />
         <option value="$PROJECT_DIR$/src/menuSystem/DefaultSystemManager.java" />
-        <option value="$PROJECT_DIR$/src/menuSystem/AirSystemManager.java" />
         <option value="$PROJECT_DIR$/src/airline/seats/SectionClass.java" />
         <option value="$PROJECT_DIR$/src/airline/seats/SeatClass.java" />
         <option value="$PROJECT_DIR$/src/airline/seats/Seat.java" />
         <option value="$PROJECT_DIR$/src/airline/seats/SectionLayouts.java" />
         <option value="$PROJECT_DIR$/src/airline/seats/SectionLayout.java" />
         <option value="$PROJECT_DIR$/src/airline/seats/Section.java" />
+        <option value="$PROJECT_DIR$/src/menuSystem/AirSystemManager.java" />
       </list>
     </option>
   </component>
@@ -1127,7 +1120,7 @@
       <workItem from="1463944179516" duration="23507000" />
       <workItem from="1464108021939" duration="4755000" />
       <workItem from="1465254058735" duration="134000" />
-      <workItem from="1465254726787" duration="4012000" />
+      <workItem from="1465254726787" duration="4072000" />
     </task>
     <task id="LOCAL-00001" summary="Added README">
       <created>1464108283457</created>
@@ -1153,11 +1146,17 @@
       <option name="project" value="LOCAL" />
       <updated>1465255204179</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fixed a weird problem">
+      <created>1465258753091</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1465258753091</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32408000" />
+    <option name="totallyTimeSpent" value="32468000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1600" height="875" extended-state="6" />
@@ -2011,7 +2010,7 @@
     <entry file="file://$PROJECT_DIR$/src/airline/seats/Section.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="31" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
           <folding>
             <element signature="e#1537#1538#0" expanded="true" />
             <element signature="e#1572#1573#0" expanded="true" />
@@ -2023,8 +2022,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/menuSystem/AirSystemManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0724347">
-          <caret line="69" column="59" selection-start-line="69" selection-start-column="59" selection-end-line="69" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.7826962">
+          <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
           <folding />
         </state>
       </provider>
