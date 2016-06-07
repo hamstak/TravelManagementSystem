@@ -1,10 +1,8 @@
 package airline.factories;
 
 import airline.Airline;
-import interfaces.CompanyFactory;
 
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 
 /**
  * Created by moth on 5/23/16.

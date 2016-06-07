@@ -1,7 +1,12 @@
 package utility;
 
+import airline.Flight;
 import airline.factories.AirlineFactory;
 import airline.factories.AirportFactory;
+import airline.factories.FlightFactory;
+import airline.seats.SeatClass;
+import airline.seats.Section;
+import airline.seats.SectionLayout;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -9,7 +14,7 @@ import java.util.Scanner;
 
 
 public class FileImport {
-    public File getFile(){
+    private File getFile(){
         File fin;
         Scanner kb = new Scanner(System.in);
         System.out.println("Select a file to read from: ");
@@ -48,7 +53,7 @@ public class FileImport {
                     if (open + 1 < line.length() && close < line.length() && open > 0 && close > 0) {
 
                         for (String s : line.substring(open + 1, close).split("[\\[|:,]"))
-                            trips.get(i).add(s);
+                            trips.get(i).add(s.trim());
 
                         System.out.println("read in line with ID " + trips.get(i).get(0));
                         open = line.indexOf(',', close) + 1;
@@ -80,6 +85,47 @@ public class FileImport {
         return factory.getCompanies();
     }
 
+    public ArrayList<airline.Flight> buildFlights (ArrayList<ArrayList<String>> flights){
+        FlightFactory factory = new FlightFactory();
+        for(ArrayList<String> flight : flights){
+            String airline = flight.get(0);
+            String flightID = flight.get(1);
+            String year = flight.get(2);
+            String month = flight.get(3);
+            String day = flight.get(4);
+            String hour = flight.get(5);
+            String minute = flight.get(6);
+            String orig = flight.get(7);
+            String dest = flight.get(8);
+            String sc1 = flight.get(9);
+            String sc1price = flight.get(10);
+            String config1 = flight.get(11);
+            String rows1 = flight.get(12);
+            String sc2 = flight.get(13);
+            String sc2price = flight.get(14);
+            String config2 = flight.get(15);
+            String rows2 = flight.get(16);
 
+            factory.createTrip(airline, orig, dest, Integer.parseInt(year),
+                    Integer.parseInt(month), Integer.parseInt(day), Integer.parseInt(hour),
+                    Integer.parseInt(minute), flightID);
+
+            Flight addSections = factory.findFlight(flightID);
+            SeatClass[] classes = new SeatClass[] {SeatClass.valueOf(sc1)};
+            SectionLayout[] layouts = new SectionLayout[] {SectionLayout.valueOf(config1)};
+            int [] rows = new int[] {Integer.parseInt(rows1)};
+            double[] prices = new double[] {Double.parseDouble(sc1price)};
+            addSections.addSection(new Section(classes, layouts, rows, prices));
+
+            classes = new SeatClass[] {SeatClass.valueOf(sc2)};
+            layouts = new SectionLayout[] {SectionLayout.valueOf(config2)};
+            rows = new int[] {Integer.parseInt(rows2)};
+            prices = new double[] {Double.parseDouble(sc2price)};
+            addSections.addSection(new Section(classes, layouts, rows, prices));
+        }
+
+        return factory.getTrips();
+
+    }
 
 }

@@ -10,14 +10,22 @@ import java.util.Date;
 public class FlightFactory implements TripFactory<Flight> {
     private ArrayList<Flight> flights = new ArrayList<>();
 
-    public void createTrip(String airline, String orig, String dest, int year, int month, int day, String id) throws IllegalArgumentException{
-        Flight toAdd = new Flight(airline, orig, dest, year, month, day, id);
+    public void createTrip(String airline, String orig, String dest, int year, int month, int day, int hour, int minute, String id) throws IllegalArgumentException{
+        Flight toAdd = new Flight(airline, orig, dest, year, month, day, hour, minute, id);
         if (!valiDate(year, month, day)){
             throw new IllegalArgumentException("Flight not created: Invalid date!");
         }else if (flights.contains(toAdd)){
             throw new IllegalArgumentException("Flight not created: Flight " + id + " already exists!");
         }
         flights.add(toAdd);
+    }
+
+    public Flight findFlight(String id){
+        for(Flight f : flights){
+            if(f.getID().equals(id))
+                return f;
+        }
+        return null;
     }
 
     private boolean valiDate(int year, int month, int day) {

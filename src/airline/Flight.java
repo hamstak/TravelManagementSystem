@@ -14,17 +14,21 @@ public class Flight implements Comparable<Flight>, Trip<Flight> {
     private int year;
     private int month;
     private int day;
+    private int hour;
+    private int minute;
     private String flightID;
     private int flightNumber = Incrementor.getInstance().next();
     private ArrayList<Section> sections = new ArrayList<>();
 
-    public Flight(String al, String og, String dest, int y, int m, int d, String id){
+    public Flight(String al, String og, String dest, int y, int m, int d, int h, int min, String id){
         airline = al;
         origin = og;
         destination = dest;
         year = y;
         month = m;
         day = d;
+        hour = h;
+        minute = min;
         flightID = id;
     }
 
@@ -55,7 +59,8 @@ public class Flight implements Comparable<Flight>, Trip<Flight> {
     public Section checkSeats(SeatClass seatClass){
         int toReturn = 0;
         for (Section s : sections){
-            if (s.getSeatClass().compareTo(seatClass) == 0){
+            for(int i = 0; i < s.getSeatClasses().length; i++)
+            if (s.getSeatClass(i).compareTo(seatClass) == 0){
                 return s;
             }
         }
@@ -73,6 +78,16 @@ public class Flight implements Comparable<Flight>, Trip<Flight> {
     public String getDestination() {
         return destination;
     }
+
+    public int getYear() {return year; }
+
+    public int getMonth() { return month; }
+
+    public int getDay() {return day;}
+
+    public int getHour() {return hour;}
+
+    public int getMinute() {return minute;}
 
     @Override
     public boolean equals(Object obj){

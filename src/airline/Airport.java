@@ -10,6 +10,8 @@ public class Airport implements Comparable<Airport>{
         this.name = name;
     }
 
+    public String getName(){ return this.name; }
+
     @Override
     public int compareTo(Airport o) {
         return name.compareTo(o.name);

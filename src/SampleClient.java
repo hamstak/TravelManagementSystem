@@ -25,16 +25,16 @@ public class SampleClient {
         res.createFlight("DELTA", "LON33", "DEN33", 2017, 5, 7, "123");//invalid airports
         res.createFlight("AMER", "DEN", "LON", 2010, 40, 100, "123abc");// invalid date
 
-        res.createSection("DELTA","123", 2, 2, SeatClass.economy);
-        res.createSection("DELTA","123", 2, 3, SeatClass.first);
-        res.createSection("DELTA","123", 2, 3, SeatClass.first);//Invalid
-        res.createSection("SWSERTT","123", 5, 5, SeatClass.economy);//Invalid airline
-        res.bookSeat("DELTA", "123", SeatClass.first, 1, 'A');
-        res.bookSeat("DELTA", "123", SeatClass.economy, 1, 'A');
-        res.bookSeat("DELTA", "123", SeatClass.economy, 1, 'B');
-        res.bookSeat("DELTA888", "123", SeatClass.business, 1, 'A');//Invalid airline
-        res.bookSeat("DELTA", "123haha7", SeatClass.business, 1, 'A');// Invalid flightId
-        res.bookSeat("DELTA", "123", SeatClass.economy, 1, 'A');//already booked
+        res.createSection("DELTA","123", 2, 2, SeatClass.E);
+        res.createSection("DELTA","123", 2, 3, SeatClass.F);
+        res.createSection("DELTA","123", 2, 3, SeatClass.F);//Invalid
+        res.createSection("SWSERTT","123", 5, 5, SeatClass.E);//Invalid airline
+        res.bookSeat("DELTA", "123", SeatClass.F, 1, 'A');
+        res.bookSeat("DELTA", "123", SeatClass.E, 1, 'A');
+        res.bookSeat("DELTA", "123", SeatClass.E, 1, 'B');
+        res.bookSeat("DELTA888", "123", SeatClass.B, 1, 'A');//Invalid airline
+        res.bookSeat("DELTA", "123haha7", SeatClass.B, 1, 'A');// Invalid flightId
+        res.bookSeat("DELTA", "123", SeatClass.E, 1, 'A');//already booked
         res.displaySystemDetails();
         res.findAvailableFlights("DEN", "LON");
     }

@@ -4,9 +4,9 @@ package airline.seats;
  * Created by moth on 6/6/16.
  */
 public enum SectionLayout{
-    layoutS(new Seat[]{new AisleWindow(), new AisleWindow()}), 
-    layoutM(new Seat[]{new Window(), new Aisle(), new Aisle(), new Window()}), 
-    layoutW(new Seat[]{new Window(), new Default(), new Aisle(), new Aisle(), new Default(), new Window()});
+    S(new Seat[]{new AisleWindow(), new AisleWindow()}),
+    M(new Seat[]{new Window(), new Aisle(), new Aisle(), new Window()}),
+    W(new Seat[]{new Window(), new Default(), new Aisle(), new Aisle(), new Default(), new Window()});
 
 
     private Seat[] seats;

@@ -53,7 +53,7 @@ public class AirSystemManager implements SystemManager {
             System.out.println("Airport(s): " + (airports.contains(orig) ? "" : orig + " ") + (airports.contains(dest) ? "" : dest + ""));
         }else{
             try{
-                flightFactory.createTrip(airline, orig, dest, year, month, day, id);
+                flightFactory.createTrip(airline, orig, dest, year, month, day,0, 0, id);
             }catch (Exception e){
                 System.out.println(e.getMessage());
             }

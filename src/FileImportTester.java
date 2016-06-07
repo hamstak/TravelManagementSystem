@@ -1,5 +1,6 @@
 import airline.Airline;
 import airline.Airport;
+import airline.Flight;
 import utility.FileImport;
 
 import java.util.ArrayList;
@@ -15,5 +16,7 @@ public class FileImportTester {
         System.out.println(ports);
         ArrayList<Airline> lines = fi.buildLines(trips);
         System.out.println(lines);
+        ArrayList<Flight> flights = fi.buildFlights(trips);
+        System.out.println(flights);
     }
 }

@@ -54,6 +54,8 @@ public class Section {
         return seatClass[i];
     }
 
+    public SeatClass[] getSeatClasses() {return seatClass; }
+
     public boolean check(int row, int column) {
         return row < isTaken.length && column < isTaken[0].length;
     }
