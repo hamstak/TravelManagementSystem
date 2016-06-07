@@ -7,11 +7,20 @@ import airline.factories.*;
 import airline.seats.SeatClass;
 import airline.seats.Section;
 import interfaces.*;
+import utility.UserUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class AirSystemManager implements SystemManager {
+    private static final String[] MENU = {"Create an Airport ",
+                                          "Create an Airline ",
+                                          "Create a Flight",
+                                          "Create a Section",
+                                          "Find Available Flights",
+                                          "Book seat",
+                                          "Go back"};
+
     private CompanyFactory<Airline> airlineFactory = new AirlineFactory();
     private PortFactory<Airport> airportFactory = new AirportFactory();
     private TripFactory<Flight> flightFactory = new FlightFactory();
@@ -116,6 +125,21 @@ public class AirSystemManager implements SystemManager {
 
     @Override
     public SystemManager runMenu(HashMap<String, SystemManager> systemMap) {
+        System.out.println("Air Travel Simulator 2016");
+        int option;
+        do {
+            option = UserUtil.dynamicMenu(MENU);
+            switch (option){
+                case 1: createAirline(UserUtil.getUserString());
+                    break;
+                case 2: break;
+                case 3: break;
+                case 4: break;
+                case 5: break;
+                case 6: break;
+                case 7: return systemMap.get("Default");
+            }
+        }while(option > 0);
         return null;
     }
 }

@@ -8,14 +8,17 @@ import java.util.HashMap;
  * Created by moth on 6/1/16.
  */
 public class DefaultSystemManager implements SystemManager {
-    public static final String[] MENU = {"1. Manage air travel",
-            "2. Manage sea travel",
-            "3. Print air travel system information",
-            "4. Print sea travel system information"};
+    public static final String[] MENU = {"Manage air travel",
+            "Manage sea travel",
+            "Print air travel system information",
+            "Print sea travel system information",
+            "Quit"};
 
     @Override
     public SystemManager runMenu(HashMap<String, SystemManager> systemMap) {
         System.out.println("Travel Management Simulator 2016");
+        if (systemMap.get("Default") == null)
+            systemMap.put("Default", this);
         int option;
         do {
             option = UserUtil.dynamicMenu(MENU);
