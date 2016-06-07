@@ -3,6 +3,7 @@ package airline;
 import airline.seats.SeatClass;
 import airline.seats.Section;
 import interfaces.Trip;
+import utility.TravelSystemDate;
 import utility.Incrementor;
 
 import java.util.ArrayList;
@@ -11,24 +12,16 @@ public class Flight implements Comparable<Flight>, Trip<Flight> {
     private String origin;
     private String destination;
     private String airline;
-    private int year;
-    private int month;
-    private int day;
-    private int hour;
-    private int minute;
+    private TravelSystemDate date;
     private String flightID;
     private int flightNumber = Incrementor.getInstance().next();
     private ArrayList<Section> sections = new ArrayList<>();
 
-    public Flight(String al, String og, String dest, int y, int m, int d, int h, int min, String id){
+    public Flight(String al, String og, String dest, TravelSystemDate date, String id){
         airline = al;
         origin = og;
         destination = dest;
-        year = y;
-        month = m;
-        day = d;
-        hour = h;
-        minute = min;
+        this.date = date;
         flightID = id;
     }
 
@@ -39,8 +32,8 @@ public class Flight implements Comparable<Flight>, Trip<Flight> {
         if (origin.compareTo(o.origin) != 0) return origin.compareTo(o.airline);
 
         if (destination.compareTo(o.destination) != 0) return destination.compareTo(o.destination);
-
-        if ( Integer.compare(year + month + day, year + month + day) != 0) return Integer.compare(year + month + day, year + month + day);
+        int compare = Integer.compare(date.getYear() + date.getMonth() + date.getDay(), o.date.getYear() + o.date.getMonth() + o.date.getDay());
+        if ( compare != 0) return compare;
 
         return flightID.compareTo(o.flightID);
 
@@ -79,15 +72,9 @@ public class Flight implements Comparable<Flight>, Trip<Flight> {
         return destination;
     }
 
-    public int getYear() {return year; }
-
-    public int getMonth() { return month; }
-
-    public int getDay() {return day;}
-
-    public int getHour() {return hour;}
-
-    public int getMinute() {return minute;}
+    public TravelSystemDate getDate(){
+        return date;
+    }
 
     @Override
     public boolean equals(Object obj){
@@ -98,7 +85,8 @@ public class Flight implements Comparable<Flight>, Trip<Flight> {
 
     public String toString(){
         String toReturn = "Flight " + flightID + " with " + sections.size() + " sections flies from " +
-                origin + " to " + destination + " on " + month + "/" + day + "/" + year + ":\n";
+                origin + " to " + destination + " on " + date.getMonth() + "/" +
+                date.getDay() + "/" + date.getYear() +", " +date.getHour()+ ":" + date.getMinute() + " ;\n";
         for (Section section : sections){
             toReturn += "\t" + section.getSeatCount() + "\n";
         }

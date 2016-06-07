@@ -7,6 +7,7 @@ import airline.factories.*;
 import airline.seats.SeatClass;
 import airline.seats.Section;
 import interfaces.*;
+import utility.TravelSystemDate;
 import utility.UserUtil;
 
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ public class AirSystemManager implements SystemManager {
         }
     }
 
-    public void createFlight(String airline, String orig, String dest, int year, int month, int day, String id){
+    public void createFlight(String airline, String orig, String dest, TravelSystemDate date, String id){
         ArrayList<Airport> airports = airportFactory.getPorts();
         if (!airlineFactory.getCompanies().contains(airline)){
             System.out.println("Flight not created: Airline " + airline + " does not exist!");
@@ -53,7 +54,7 @@ public class AirSystemManager implements SystemManager {
             System.out.println("Airport(s): " + (airports.contains(orig) ? "" : orig + " ") + (airports.contains(dest) ? "" : dest + ""));
         }else{
             try{
-                flightFactory.createTrip(airline, orig, dest, year, month, day,0, 0, id);
+                flightFactory.createTrip(airline, orig, dest, date, id);
             }catch (Exception e){
                 System.out.println(e.getMessage());
             }
@@ -86,7 +87,7 @@ public class AirSystemManager implements SystemManager {
         return flight.getOrigin().compareTo(orig) == 0 && flight.getDestination().compareTo(dest) == 0 && flight.seatCount() > 0;
     }
 
-    public void bookSeat(String air, String flightID, SeatClass s, int row, char col){
+    public void bookSeat(String flightID, SeatClass s, int row, char col){
         int column = Character.isLowerCase(col) ? col - 39 : col - 65;
         for(Flight flight : flightFactory.getTrips()){
             if(flightID.compareTo(flight.getID()) == 0){
@@ -130,13 +131,29 @@ public class AirSystemManager implements SystemManager {
         do {
             option = UserUtil.dynamicMenu(MENU);
             switch (option){
-                case 1: createAirline(UserUtil.getUserString());
-                    break;
-                case 2: break;
-                case 3: break;
-                case 4: break;
-                case 5: break;
-                case 6: break;
+                case 1: createAirport(UserUtil.getUserString("Airport Name"));
+                    return this;
+                case 2: createAirline(UserUtil.getUserString("Airline Name"));
+                    return this;
+                case 3: createFlight(UserUtil.getUserString("Airline Name"),
+                        UserUtil.getUserString("Origin Port"),
+                        UserUtil.getUserString("Destination Port"),
+                        TravelSystemDate.createDateFromInput(),
+                        UserUtil.getUserString("Flight ID"));
+                    return this;
+                case 4: createSection(UserUtil.getUserString("Airline Name"),
+                                      UserUtil.getUserString("Flight ID"),
+                                      UserUtil.getUserPositiveInt("Row"),
+                                      UserUtil.getUserPositiveInt("Column"),
+                                      SeatClass.valueOf(UserUtil.getUserString("Seat Class (E,B,F)")));
+                    return this;
+                case 5: findAvailableFlights(UserUtil.getUserString("Origin"), UserUtil.getUserString("Destination"));
+                    return this;
+                case 6: bookSeat(UserUtil.getUserString("Flight ID"),
+                            SeatClass.valueOf(UserUtil.getUserString("Seat Class (E,B,F)")),
+                            UserUtil.getUserPositiveInt("Row"),
+                            UserUtil.getUserString("Column Letter").charAt(0));
+                    return this;
                 case 7: return systemMap.get("Default");
             }
         }while(option > 0);

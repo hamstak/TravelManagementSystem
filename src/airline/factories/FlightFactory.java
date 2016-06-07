@@ -2,6 +2,7 @@ package airline.factories;
 
 import airline.Flight;
 import interfaces.TripFactory;
+import utility.TravelSystemDate;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -10,9 +11,10 @@ import java.util.Date;
 public class FlightFactory implements TripFactory<Flight> {
     private ArrayList<Flight> flights = new ArrayList<>();
 
-    public void createTrip(String airline, String orig, String dest, int year, int month, int day, int hour, int minute, String id) throws IllegalArgumentException{
-        Flight toAdd = new Flight(airline, orig, dest, year, month, day, hour, minute, id);
-        if (!valiDate(year, month, day)){
+    public void createTrip(String airline, String orig, String dest, TravelSystemDate date, String id) throws IllegalArgumentException{
+        Flight toAdd = new Flight(airline, orig, dest, date, id);
+
+        if (!valiDate(date)){
             throw new IllegalArgumentException("Flight not created: Invalid date!");
         }else if (flights.contains(toAdd)){
             throw new IllegalArgumentException("Flight not created: Flight " + id + " already exists!");
@@ -28,16 +30,16 @@ public class FlightFactory implements TripFactory<Flight> {
         return null;
     }
 
-    private boolean valiDate(int year, int month, int day) {
-        Date date = new Date();
+    private boolean valiDate(TravelSystemDate date) {
+        Date checkDate = new Date();
         Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
+        calendar.setTime(checkDate);
 
-        if (year < calendar.get(Calendar.YEAR)) return false;
+        if (date.getYear() < calendar.get(Calendar.YEAR)) return false;
 
-        if (month < calendar.get(Calendar.MONTH) && year <= calendar.get(Calendar.YEAR)) return false;
+        if ( date.getMonth()< calendar.get(Calendar.MONTH) && date.getYear() <= calendar.get(Calendar.YEAR)) return false;
 
-        if (day < calendar.get(Calendar.DAY_OF_MONTH) && month <= calendar.get(Calendar.MONTH)) return false;
+        if (date.getDay() < calendar.get(Calendar.DAY_OF_MONTH) && date.getMonth() <= calendar.get(Calendar.MONTH)) return false;
 
         return true;
     }
