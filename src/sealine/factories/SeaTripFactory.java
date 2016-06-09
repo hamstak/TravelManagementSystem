@@ -8,6 +8,7 @@ import utility.TravelSystemDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  * Created by moth on 6/7/16.
@@ -33,11 +34,13 @@ public class SeaTripFactory implements TripFactory<Cruise>{
     }
 
     private boolean validInterval(DateWrapper dateWrapper) {
-        Date startDate = new Date(dateWrapper.getStartDate().getYear(), dateWrapper.getStartDate().getMonth(), dateWrapper.getStartDate().getDay());
-        Date endDate = new Date(dateWrapper.getFinishDate().getYear(), dateWrapper.getFinishDate().getMonth(), dateWrapper.getFinishDate().getDay());
+        Date startDate = new Date(dateWrapper.getStartDate().getYear() - 1900, dateWrapper.getStartDate().getMonth(), dateWrapper.getStartDate().getDay());
+        Date endDate = new Date(dateWrapper.getFinishDate().getYear() - 1900, dateWrapper.getFinishDate().getMonth(), dateWrapper.getFinishDate().getDay());
+
         if (endDate.getTime() - startDate.getTime() <= 0)
             return false;
-        if (endDate.getTime() - startDate.getTime()/(8.64*Math.pow(10,7)) <= 21)
+
+        if ((endDate.getTime() - startDate.getTime())/(8.64*Math.pow(10,7)) <= 21)
             return true;
         return false;
     }

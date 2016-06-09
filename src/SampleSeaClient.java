@@ -26,7 +26,7 @@ public class SampleSeaClient {
         TravelSystemDate dateStart2 = new TravelSystemDate(2016, 3, 20, 6, 50);
         TravelSystemDate dateFinish2 = new TravelSystemDate(2016, 4, 20, 6, 40);
         TravelSystemDate dateStart3 = new TravelSystemDate(2016, 5, 20, 6, 50);
-        TravelSystemDate dateFinish3 = new TravelSystemDate(26, 5, 6, 6, 50);
+        TravelSystemDate dateFinish3 = new TravelSystemDate(2016, 5, 6, 6, 50);
 
         res.createCruise("DELTA", "DEN", "LON", dateStart1, dateFinish1,  "123");
         res.createCruise("DELTA", "DEN", "DEH", dateStart2, dateFinish2, "567abc");

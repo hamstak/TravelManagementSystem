@@ -12,6 +12,12 @@ import java.util.ArrayList;
 public class AirlineFactory implements CompanyFactory<Airline> {
     public ArrayList<Airline> airlines = new ArrayList<>();
 
+    public AirlineFactory(ArrayList<Airline> lines){
+        airlines = lines;
+    }
+    public AirlineFactory(){
+
+    }
     public void createCompany(String name) throws IllegalArgumentException{
         if (name.length() > 6 || name.length() == 0)
             throw new IllegalArgumentException("Airline not created: Invalid name! [" + name + "]");

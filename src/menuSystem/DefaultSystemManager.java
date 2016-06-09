@@ -1,14 +1,20 @@
 package menuSystem;
 
+import airline.Airline;
+import airline.Airport;
+import airline.Flight;
 import interfaces.SystemManager;
+import utility.FileImport;
 import utility.UserUtil;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
  * Created by moth on 6/1/16.
  */
 public class DefaultSystemManager implements SystemManager {
+    private HashMap<String, SystemManager> systemMap;
     public static final String[] MENU = {"Manage air travel",
             "Manage sea travel",
             "Print air travel system information",
@@ -17,6 +23,7 @@ public class DefaultSystemManager implements SystemManager {
 
     @Override
     public SystemManager runMenu(HashMap<String, SystemManager> systemMap) {
+        this.systemMap = systemMap;
         System.out.println("Travel Management Simulator 2016");
         if (systemMap.get("Default") == null)
             systemMap.put("Default", this);
@@ -38,6 +45,8 @@ public class DefaultSystemManager implements SystemManager {
         return null;
     }
 
+
+
     @Override
     public void displaySystemDetails() {
 
@@ -51,4 +60,6 @@ public class DefaultSystemManager implements SystemManager {
         }
         return this;
     }
+
+
 }

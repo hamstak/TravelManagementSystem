@@ -7,6 +7,8 @@ import airline.factories.*;
 import airline.seats.SeatClass;
 import airline.seats.FlightSection;
 import interfaces.*;
+import utility.FileExport;
+import utility.FileImport;
 import utility.TravelSystemDate;
 import utility.UserUtil;
 
@@ -20,11 +22,25 @@ public class AirSystemManager implements SystemManager {
                                           "Create a FlightSection",
                                           "Find Available Flights",
                                           "Book seat",
+                                          "Read air system from file",
+                                          "Write air system to file",
                                           "Go back"};
 
     private CompanyFactory<Airline> airlineFactory = new AirlineFactory();
     private PortFactory<Airport> airportFactory = new AirportFactory();
     private TripFactory<Flight> flightFactory = new FlightFactory();
+    private HashMap<String, SystemManager> systemMap;
+
+    public AirSystemManager(){}
+
+    public AirSystemManager(ArrayList<Airport> ports, ArrayList<Airline> lines, ArrayList<Flight> flights){
+        airportFactory = new AirportFactory(ports);
+
+        airlineFactory = new AirlineFactory(lines);
+
+        flightFactory = new FlightFactory(flights);
+
+    }
 
     public void createAirport(String name){
         try {
@@ -45,13 +61,13 @@ public class AirSystemManager implements SystemManager {
 
     public void createFlight(String airline, String orig, String dest, TravelSystemDate date, String id){
         ArrayList<Airport> airports = airportFactory.getPorts();
-        if (!airlineFactory.getCompanies().contains(airline)){
+        if (!airlineFactory.getCompanies().contains(new Airline(airline))){
             System.out.println("Flight not created: Airline " + airline + " does not exist!");
 
             //TODO : Handle non-existing airports properly? If this is even possible
 
         }else if (!(orig.length() == 3 && dest.length() == 3)){
-            System.out.println("Airport(s): " + (airports.contains(orig) ? "" : orig + " ") + (airports.contains(dest) ? "" : dest + ""));
+            System.out.println("Airport(s): " + (airports.contains(new Airport(orig)) ? "" : orig + " ") + (airports.contains(new Airport(dest)) ? "" : dest + ""));
         }else{
             try{
                 flightFactory.createTrip(airline, orig, dest, date, id);
@@ -62,7 +78,7 @@ public class AirSystemManager implements SystemManager {
     }
 
     public void createSection(String airline, String flightID, int rows, int cols, SeatClass s){
-        if (!airlineFactory.getCompanies().contains(airline)){
+        if (!airlineFactory.getCompanies().contains(new Airline(airline))){
             System.out.println("FlightSection not created: Airline " + airline + " not found!");
             return;
         }
@@ -127,6 +143,7 @@ public class AirSystemManager implements SystemManager {
 
     @Override
     public SystemManager runMenu(HashMap<String, SystemManager> systemMap) {
+        this.systemMap = systemMap;
         System.out.println("Air Travel Simulator 2016");
         int option;
         do {
@@ -159,5 +176,26 @@ public class AirSystemManager implements SystemManager {
             }
         }while(option > 0);
         return null;
+    }
+
+    private void importFile(){
+        FileImport fi = new FileImport();
+        ArrayList<ArrayList<String>> trips = new ArrayList<ArrayList<String>>();
+        ArrayList<Airport> ports = new ArrayList<>();
+        ArrayList<Airline> lines = new ArrayList<>();
+        ArrayList<Flight> flights = new ArrayList<>();
+        String[] stops = fi.readFile(trips);
+
+        ports = fi.buildPorts(stops);
+        lines = fi.buildLines(trips);
+        flights = fi.buildFlights(trips);
+
+
+        systemMap.put("Air", new AirSystemManager(ports, lines, flights));
+    }
+
+    private void exportFile() {
+        FileExport fe = new FileExport();
+        String airsys = fe.convertSystem();
     }
 }

@@ -6,7 +6,7 @@ import java.io.File;
 import java.util.*;
 
 public class FileExport {
-    private String convertSystem(ArrayList<Airport> ports, ArrayList<Airline> lines, ArrayList<Flight> flights){
+    public String convertSystem(ArrayList<Airport> ports, ArrayList<Airline> lines, ArrayList<Flight> flights){
         String result = "[";
         for(Airport port : ports){
             result += port.getName() + ", ";

@@ -19,6 +19,7 @@ public class CabinSection implements Section<CabinType>{
     }
 
     public CabinType getType() {
+        Cabin check = cabins.get(0);
         return cabins.get(0).getType();
     }
 

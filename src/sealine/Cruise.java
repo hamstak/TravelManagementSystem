@@ -30,7 +30,7 @@ public class Cruise implements Trip<Cruise>, Comparable<Cruise>{
         destination = dest;
         this.date = date;
         cruiseID = cr;
-        dateFinish = dateFinish;
+        this.dateFinish = dateFinish;
     }
 
 
@@ -95,11 +95,7 @@ public class Cruise implements Trip<Cruise>, Comparable<Cruise>{
     }
 
     public String toString(){
-        String toReturn = "Flight " + cruiseID + " with " + sections.size() + " sections flies from " +
-                origin + " to " + destination + " on " + date.getMonth() + "/" +
-                date.getDay() + "/" + date.getYear() +", " +date.getHour()+ ":" + date.getMinute() + "\n Ending on: "
-                + dateFinish.getMonth() + "/" + dateFinish.getDay() + "/" + dateFinish.getYear() + ", "
-                + dateFinish.getHour() + ":" + dateFinish.getMinute() + "\n";
+        String toReturn = "Flight " + cruiseID + " with " + sections.size() + " sections flies from " + origin + " to " + destination + " on " + date.toString() + "\n Ending on: " + dateFinish.toString() + "\n";
         for (CabinSection section : sections){
             toReturn += "\t" + section.getSeatCount() + "\n";
         }

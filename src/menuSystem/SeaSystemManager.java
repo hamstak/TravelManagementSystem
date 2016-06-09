@@ -52,13 +52,14 @@ public class SeaSystemManager implements SystemManager {
 
     public void createCruise(String sealine, String orig, String dest, TravelSystemDate dateStart, TravelSystemDate dateFinish, String id){
         ArrayList<Seaport> seaports = seaportFactory.getPorts();
-        if (!sealineFactory.getCompanies().contains(sealine)){
+
+        if (!sealineFactory.getCompanies().contains(new Sealine(sealine))){
             System.out.println("Trip not created: Sealine " + sealine + " does not exist!");
 
             //TODO : Handle non-existing airports properly? If this is even possible
 
         }else if (!(orig.length() == 3 && dest.length() == 3)){
-            System.out.println("Seaport(s): " + (seaports.contains(orig) ? "" : orig + " ") + (seaports.contains(dest) ? "" : dest + ""));
+            System.out.println("Seaport(s): " + (seaports.contains(new Seaport(orig)) ? "" : orig + " ") + (seaports.contains(new Seaport(dest)) ? "" : dest + ""));
         }else{
             try{
                 seaTripFactory.createTrip(sealine, orig, dest, new TravelSystemInterval( dateStart, dateFinish), id);
@@ -69,12 +70,12 @@ public class SeaSystemManager implements SystemManager {
     }
 
     public void createSection(String sealine, String flightID, int amount, double price, CabinType s){
-        if (!sealineFactory.getCompanies().contains(sealine)){
+        if (!sealineFactory.getCompanies().contains(new Sealine(sealine))){
             System.out.println("FlightSection not created: Sealine " + sealine + " not found!");
             return;
         }
         for (Cruise cruise : seaTripFactory.getTrips()){
-            if (cruise.getID().compareTo(flightID) == 0 && cruise.checkSeats(new CabinSection(s, 0, 0)) == null){
+            if (cruise.getID().compareTo(flightID) == 0 && cruise.checkSeats(new CabinSection(s, 1, 0)) == null){
                 cruise.addSection(new CabinSection(s,amount, price ));
             }
         }
@@ -95,7 +96,7 @@ public class SeaSystemManager implements SystemManager {
     }
 
     public void bookSeat(String cruiseID, CabinType s){
-        CabinSection fake = new CabinSection(s, 0, 0);
+        CabinSection fake = new CabinSection(s, 1, 0);
         for(Cruise cruise : seaTripFactory.getTrips()){
             if(cruiseID.compareTo(cruise.getID()) == 0){
                 if (cruise.checkSeats(fake) != null && cruise.checkSeats(fake).check(0,0) && !cruise.checkSeats(fake).isTaken(0,0)) {

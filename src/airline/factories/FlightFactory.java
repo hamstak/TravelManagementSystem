@@ -12,6 +12,13 @@ import java.util.Date;
 public class FlightFactory implements TripFactory<Flight> {
     private ArrayList<Flight> flights = new ArrayList<>();
 
+    public FlightFactory(ArrayList<Flight> fligts){
+        this.flights = fligts;
+    }
+
+    public FlightFactory(){
+
+    }
     public void createTrip(String airline, String orig, String dest, DateWrapper dateWrapper, String id) throws IllegalArgumentException{
         TravelSystemDate date = dateWrapper.getStartDate();
         Flight toAdd = new Flight(airline, orig, dest, date, id);

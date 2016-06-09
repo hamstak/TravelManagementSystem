@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * Created by moth on 6/7/16.
  */
 public class SealineFactory implements CompanyFactory<Sealine>{
-    private ArrayList<Sealine> sealines;
+    private ArrayList<Sealine> sealines = new ArrayList<>();
     @Override
     public void createCompany(String name) {
         if (name.length() > 6 || name.length() == 0)
