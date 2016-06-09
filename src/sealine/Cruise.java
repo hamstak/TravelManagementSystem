@@ -1,12 +1,9 @@
 package sealine;
 
-import airline.Flight;
 import airline.seats.FlightSection;
-import airline.seats.SeatClass;
 import interfaces.Section;
 import interfaces.Trip;
 import sealine.cabins.CabinSection;
-import sealine.cabins.CabinType;
 import utility.TravelSystemDate;
 
 import java.util.ArrayList;

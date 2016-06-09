@@ -1,8 +1,7 @@
 package airline.seats;
 
+import airline.SeatClass;
 import interfaces.Section;
-
-import java.util.HashMap;
 
 public class FlightSection  implements Section<SeatClass>{
     private SeatClass seatClass;
@@ -16,7 +15,7 @@ public class FlightSection  implements Section<SeatClass>{
         isTaken = new boolean[rows][layout.getSeats().length];
         seatLayout = layout;
         price = prices;
-
+        seatCount = rows + layout.getSeats().length;
     }
 
     public boolean takeSeat(int i, int j){
@@ -45,4 +44,9 @@ public class FlightSection  implements Section<SeatClass>{
     public double getPrice(){
         return price;
     }
+
+    public SectionLayout getSeatLayout(){return seatLayout;}
+
+    public int getRows() {return isTaken.length;}
+
 }

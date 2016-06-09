@@ -4,7 +4,7 @@ import airline.Airline;
 import airline.Airport;
 import airline.Flight;
 import airline.factories.*;
-import airline.seats.SeatClass;
+import airline.SeatClass;
 import airline.seats.FlightSection;
 import interfaces.*;
 import utility.TravelSystemDate;

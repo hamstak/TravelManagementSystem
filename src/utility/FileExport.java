@@ -1,12 +1,14 @@
 package utility;
 
 import airline.*;
+import airline.seats.FlightSection;
 
 import java.io.File;
+import java.io.PrintWriter;
 import java.util.*;
 
 public class FileExport {
-    private String convertSystem(ArrayList<Airport> ports, ArrayList<Airline> lines, ArrayList<Flight> flights){
+    public String convertSystem(ArrayList<Airport> ports, ArrayList<Airline> lines, ArrayList<Flight> flights){
         String result = "[";
         for(Airport port : ports){
             result += port.getName() + ", ";
@@ -14,12 +16,18 @@ public class FileExport {
         result += "]{";
         for(Airline line : lines){
             for(Flight flight : flights){
-           //     result += line.getName() + "[" + flight.getID() + "|" + flight.getYear() + ", " +
-           //             flight.getMonth() + ", " + flight.getDay() + ", " + flight.getHour() + ", " + flight.getMinute() +
-                //            "|" + flight.getOrigin() + "|" + flight.getDestination() + "["; //add sections, costs, etc. ]
+                result += line.getName() + "[" + flight.getID() + "|" + flight.getDate().getYear() + ", " +
+                        flight.getDate().getMonth() + ", " + flight.getDate().getDay() + ", " + flight.getDate().getHour() +
+                        ", " + flight.getDate().getMinute() + "|" + flight.getOrigin() + "|" + flight.getDestination() +
+                        "[";
+                for(FlightSection fs : flight.getSections()){
+                    result += fs.getType().encode() + ":" + (int)fs.getPrice() + ":" + fs.getSeatLayout().getID() + ":" + fs.getRows() + ",";
+                }
+                result += "]";
             }
+            result += "],";
         }
-        result += "]}";
+        result += "}";
         return result;
     }
 
@@ -41,8 +49,9 @@ public class FileExport {
 
     public void writeFile(String system) {
         try {
-            Scanner fout = new Scanner(getFile());
-            //write out
+            PrintWriter fout = new PrintWriter(getFile());
+            fout.write(system);
+            fout.flush();
         }
         catch(Exception e){
             System.out.println("Something went wrong! " + e.getClass() + " : " + e.getMessage());

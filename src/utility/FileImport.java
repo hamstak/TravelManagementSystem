@@ -4,9 +4,9 @@ import airline.Flight;
 import airline.factories.AirlineFactory;
 import airline.factories.AirportFactory;
 import airline.factories.FlightFactory;
-import airline.seats.FlightSection;
-import airline.seats.SeatClass;
+import airline.SeatClass;
 import airline.seats.SectionLayout;
+import airline.seats.FlightSection;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -97,31 +97,21 @@ public class FileImport {
             String minute = flight.get(6);
             String orig = flight.get(7);
             String dest = flight.get(8);
-            String sc1 = flight.get(9);
-            String sc1price = flight.get(10);
-            String config1 = flight.get(11);
-            String rows1 = flight.get(12);
-            String sc2 = flight.get(13);
-            String sc2price = flight.get(14);
-            String config2 = flight.get(15);
-            String rows2 = flight.get(16);
 
-//            factory.createTrip(airline, orig, dest, Integer.parseInt(year),
-//                    Integer.parseInt(month), Integer.parseInt(day), Integer.parseInt(hour),
-//                    Integer.parseInt(minute), flightID);
+            TravelSystemDate date = new TravelSystemDate(Integer.parseInt(year), Integer.parseInt(month),
+                    Integer.parseInt(day), Integer.parseInt(hour),Integer.parseInt(minute));
+            factory.createTrip(airline, orig, dest, date, flightID);
 
-            Flight addSections = factory.findFlight(flightID);
-            SeatClass[] classes = new SeatClass[] {SeatClass.valueOf(sc1)};
-            SectionLayout[] layouts = new SectionLayout[] {SectionLayout.valueOf(config1)};
-            int [] rows = new int[] {Integer.parseInt(rows1)};
-            double[] prices = new double[] {Double.parseDouble(sc1price)};
-//            addSections.addSection(new FlightSection(classes, layouts, rows, prices));
-
-            classes = new SeatClass[] {SeatClass.valueOf(sc2)};
-            layouts = new SectionLayout[] {SectionLayout.valueOf(config2)};
-            rows = new int[] {Integer.parseInt(rows2)};
-            prices = new double[] {Double.parseDouble(sc2price)};
-//            addSections.addSection(new FlightSection(classes, layouts, rows, prices));
+            for(int i = 9; i < flight.size(); i++){
+                Flight f = factory.findFlight(flightID);
+                if(flight.get(i).equals("E") || flight.get(i).equals("F") || flight.get(i).equals("B")){
+                    String c = flight.get(i);
+                    double price = Double.parseDouble(flight.get(i+1));
+                    String layout = flight.get(i+2);
+                    int rows = Integer.parseInt(flight.get(i+3));
+                    f.addSection(new FlightSection(SeatClass.valueOf(c), SectionLayout.valueOf(layout), rows, price));
+                }
+            }
         }
 
         return factory.getTrips();
