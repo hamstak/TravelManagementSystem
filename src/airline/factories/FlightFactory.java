@@ -1,6 +1,7 @@
 package airline.factories;
 
 import airline.Flight;
+import interfaces.DateWrapper;
 import interfaces.TripFactory;
 import utility.TravelSystemDate;
 
@@ -11,7 +12,8 @@ import java.util.Date;
 public class FlightFactory implements TripFactory<Flight> {
     private ArrayList<Flight> flights = new ArrayList<>();
 
-    public void createTrip(String airline, String orig, String dest, TravelSystemDate date, String id) throws IllegalArgumentException{
+    public void createTrip(String airline, String orig, String dest, DateWrapper dateWrapper, String id) throws IllegalArgumentException{
+        TravelSystemDate date = dateWrapper.getStartDate();
         Flight toAdd = new Flight(airline, orig, dest, date, id);
 
         if (!valiDate(date)){

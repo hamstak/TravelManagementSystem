@@ -10,6 +10,7 @@ import sealine.factories.SeaTripFactory;
 import sealine.factories.SealineFactory;
 import sealine.factories.SeaportFactory;
 import utility.TravelSystemDate;
+import utility.TravelSystemInterval;
 import utility.UserUtil;
 
 import java.util.ArrayList;
@@ -19,10 +20,10 @@ import java.util.HashMap;
  * Created by moth on 6/1/16.
  */
 public class SeaSystemManager implements SystemManager {
-    private static final String[] MENU = {"Create a Seaport ",
-            "Create an Sealine ",
+    private static final String[] MENU = {"Create a Seaport",
+            "Create an Sealine",
             "Create a Trip",
-            "Create a FlightSection",
+            "Create a Cruise Section",
             "Find Available Trips",
             "Book Cabin",
             "Go back"};
@@ -32,7 +33,7 @@ public class SeaSystemManager implements SystemManager {
     private SeaTripFactory seaTripFactory = new SeaTripFactory();
 
 
-    public void createAirport(String name){
+    public void createSeaport(String name){
         try {
             seaportFactory.createPort(name);
         }catch (Exception e){
@@ -41,7 +42,7 @@ public class SeaSystemManager implements SystemManager {
 
     }
 
-    public void createAirline(String name){
+    public void createSealine(String name){
         try{
             sealineFactory.createCompany(name);
         }catch (Exception e){
@@ -49,7 +50,7 @@ public class SeaSystemManager implements SystemManager {
         }
     }
 
-    public void createFlight(String sealine, String orig, String dest, TravelSystemDate date, String id){
+    public void createCruise(String sealine, String orig, String dest, TravelSystemDate dateStart, TravelSystemDate dateFinish, String id){
         ArrayList<Seaport> seaports = seaportFactory.getPorts();
         if (!sealineFactory.getCompanies().contains(sealine)){
             System.out.println("Trip not created: Sealine " + sealine + " does not exist!");
@@ -60,7 +61,7 @@ public class SeaSystemManager implements SystemManager {
             System.out.println("Seaport(s): " + (seaports.contains(orig) ? "" : orig + " ") + (seaports.contains(dest) ? "" : dest + ""));
         }else{
             try{
-                seaTripFactory.createTrip(sealine, orig, dest, date, id);
+                seaTripFactory.createTrip(sealine, orig, dest, new TravelSystemInterval( dateStart, dateFinish), id);
             }catch (Exception e){
                 System.out.println(e.getMessage());
             }
@@ -79,17 +80,17 @@ public class SeaSystemManager implements SystemManager {
         }
     }
 
-    public ArrayList<Cruise> findAvailableFlights(String orig, String dest){
+    public ArrayList<Cruise> findAvailableCruises(String orig, String dest){
         ArrayList<Cruise> available = new ArrayList<>();
         for(Cruise cruise : seaTripFactory.getTrips()){
-            if (validFlight(cruise, orig, dest))
+            if (validCruise(cruise, orig, dest))
                 available.add(cruise);
         }
         System.out.println(available.size() + " cruises found.");
         return available;
     }
 
-    private boolean validFlight(Cruise cruise, String orig, String dest) {
+    private boolean validCruise(Cruise cruise, String orig, String dest) {
         return cruise.getOrigin().compareTo(orig) == 0 && cruise.getDestination().compareTo(dest) == 0 && cruise.seatCount() > 0;
     }
 
@@ -137,13 +138,14 @@ public class SeaSystemManager implements SystemManager {
         do {
             option = UserUtil.dynamicMenu(MENU);
             switch (option){
-                case 1: createAirport(UserUtil.getUserString("Airport Name"));
+                case 1: createSeaport(UserUtil.getUserString("Airport Name"));
                     return this;
-                case 2: createAirline(UserUtil.getUserString("Airline Name"));
+                case 2: createSealine(UserUtil.getUserString("Airline Name"));
                     return this;
-                case 3: createFlight(UserUtil.getUserString("Airline Name"),
+                case 3: createCruise(UserUtil.getUserString("Airline Name"),
                         UserUtil.getUserString("Origin Port"),
                         UserUtil.getUserString("Destination Port"),
+                        TravelSystemDate.createDateFromInput(),
                         TravelSystemDate.createDateFromInput(),
                         UserUtil.getUserString("Flight ID"));
                     return this;
@@ -153,7 +155,7 @@ public class SeaSystemManager implements SystemManager {
                         UserUtil.getUserPositiveInt("Column"),
                         CabinType.valueOf(UserUtil.getUserString("Seat Class (E,B,F)")));
                     return this;
-                case 5: findAvailableFlights(UserUtil.getUserString("Origin"), UserUtil.getUserString("Destination"));
+                case 5: findAvailableCruises(UserUtil.getUserString("Origin"), UserUtil.getUserString("Destination"));
                     return this;
                 case 6: bookSeat(UserUtil.getUserString("Flight ID"),
                         CabinType.valueOf(UserUtil.getUserString("Seat Class (E,B,F)")));

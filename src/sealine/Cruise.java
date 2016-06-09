@@ -16,16 +16,18 @@ public class Cruise implements Trip<Cruise>, Comparable<Cruise>{
     private String destination;
     private String sealine;
     private TravelSystemDate date;
+    private TravelSystemDate dateFinish;
     private String cruiseID;
     private ArrayList<CabinSection> sections = new ArrayList<>();
 
 
-    public Cruise(String sl, String orig, String dest, TravelSystemDate date, String cr){
+    public Cruise(String sl, String orig, String dest, TravelSystemDate date, TravelSystemDate dateFinish, String cr){
         sealine = sl;
         origin = orig;
         destination = dest;
         this.date = date;
         cruiseID = cr;
+        dateFinish = dateFinish;
     }
 
 
@@ -92,7 +94,9 @@ public class Cruise implements Trip<Cruise>, Comparable<Cruise>{
     public String toString(){
         String toReturn = "Flight " + cruiseID + " with " + sections.size() + " sections flies from " +
                 origin + " to " + destination + " on " + date.getMonth() + "/" +
-                date.getDay() + "/" + date.getYear() +", " +date.getHour()+ ":" + date.getMinute() + " ;\n";
+                date.getDay() + "/" + date.getYear() +", " +date.getHour()+ ":" + date.getMinute() + "\n Ending on: "
+                + dateFinish.getMonth() + "/" + dateFinish.getDay() + "/" + dateFinish.getYear() + ", "
+                + dateFinish.getHour() + ":" + dateFinish.getMinute() + "\n";
         for (CabinSection section : sections){
             toReturn += "\t" + section.getSeatCount() + "\n";
         }

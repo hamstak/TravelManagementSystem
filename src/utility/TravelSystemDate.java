@@ -1,9 +1,11 @@
 package utility;
 
+import interfaces.DateWrapper;
+
 /**
  * Created by moth on 6/7/16.
  */
-public class TravelSystemDate {
+public class TravelSystemDate implements DateWrapper{
     private int month;
     private int day;
     private int year;
@@ -49,5 +51,15 @@ public class TravelSystemDate {
     @Override
     public String toString(){
         return month + "/" + day + "/" + year + ", " + hour + ":" + minute;
+    }
+
+    @Override
+    public TravelSystemDate getStartDate() {
+        return this;
+    }
+
+    @Override
+    public TravelSystemDate getFinishDate() {
+        return this;
     }
 }
