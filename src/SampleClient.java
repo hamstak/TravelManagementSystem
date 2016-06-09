@@ -1,4 +1,4 @@
-import airline.seats.SeatClass;
+import airline.SeatClass;
 import menuSystem.AirSystemManager;
 
 public class SampleClient {

@@ -2,7 +2,6 @@ package interfaces;
 
 
 import airline.seats.FlightSection;
-import airline.seats.SeatClass;
 
 public interface Trip<T> {
     int compareTo(T t);

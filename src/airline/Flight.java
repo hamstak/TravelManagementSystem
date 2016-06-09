@@ -1,7 +1,6 @@
 package airline;
 
 import airline.seats.FlightSection;
-import airline.seats.SeatClass;
 import interfaces.Section;
 import interfaces.Trip;
 import utility.TravelSystemDate;
@@ -73,6 +72,8 @@ public class Flight implements Comparable<Flight>, Trip<Flight> {
     public TravelSystemDate getDate(){
         return date;
     }
+
+    public ArrayList<FlightSection> getSections(){ return flightSections; }
 
     @Override
     public boolean equals(Object obj){
