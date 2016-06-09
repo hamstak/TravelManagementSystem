@@ -1,65 +1,76 @@
-package airline;
+package sealine;
 
+import airline.Flight;
 import airline.seats.FlightSection;
 import airline.seats.SeatClass;
 import interfaces.Section;
 import interfaces.Trip;
+import sealine.cabins.CabinSection;
+import sealine.cabins.CabinType;
 import utility.TravelSystemDate;
 
 import java.util.ArrayList;
 
-public class Flight implements Comparable<Flight>, Trip<Flight> {
+/**
+ * Created by moth on 6/7/16.
+ */
+public class Cruise implements Trip<Cruise>, Comparable<Cruise>{
     private String origin;
     private String destination;
-    private String airline;
+    private String sealine;
     private TravelSystemDate date;
-    private String flightID;
-    private ArrayList<FlightSection> flightSections = new ArrayList<>();
+    private String cruiseID;
+    private ArrayList<CabinSection> sections = new ArrayList<>();
 
-    public Flight(String al, String og, String dest, TravelSystemDate date, String id){
-        airline = al;
-        origin = og;
+
+    public Cruise(String sl, String orig, String dest, TravelSystemDate date, String cr){
+        sealine = sl;
+        origin = orig;
         destination = dest;
         this.date = date;
-        flightID = id;
+        cruiseID = cr;
     }
 
-    @Override
-    public int compareTo(Flight o) {
-        if(airline.compareTo(o.airline) != 0) return airline.compareTo(o.airline);
 
-        if (origin.compareTo(o.origin) != 0) return origin.compareTo(o.airline);
+
+    public void addSection(CabinSection s){sections.add(s);}
+
+    @Override
+    public int compareTo(Cruise o) {
+        if(sealine.compareTo(o.sealine) != 0) return sealine.compareTo(o.sealine);
+
+        if (origin.compareTo(o.origin) != 0) return origin.compareTo(o.sealine);
 
         if (destination.compareTo(o.destination) != 0) return destination.compareTo(o.destination);
         int compare = Integer.compare(date.getYear() + date.getMonth() + date.getDay(), o.date.getYear() + o.date.getMonth() + o.date.getDay());
         if ( compare != 0) return compare;
 
-        return flightID.compareTo(o.flightID);
+        return cruiseID.compareTo(o.cruiseID);
+    }
+
+    @Override
+    public void addSection(FlightSection s) {
 
     }
 
-    public void addSection(FlightSection s){
-        flightSections.add(s);}
-
     public int seatCount(){
         int toReturn = 0;
-        for (FlightSection s : flightSections){
+        for (CabinSection s : sections){
             toReturn += s.getSeatCount();
         }
         return toReturn;
     }
 
-    @Override
-    public Section checkSeats(Section s) {
-        for (FlightSection f : flightSections){
-            if(f.getType() == s.getType())
-                return f;
+    public Section checkSeats(Section s){
+        for (CabinSection c : sections){
+            if (c.getType() == s.getType())
+                return s;
         }
         return null;
     }
 
     public String getID(){
-        return flightID;
+        return cruiseID;
     }
 
     public String getOrigin() {
@@ -77,16 +88,16 @@ public class Flight implements Comparable<Flight>, Trip<Flight> {
     @Override
     public boolean equals(Object obj){
         if (!(this.getClass().getSimpleName().equals(obj.getClass().getSimpleName()))) return false;
-        Flight flight = (Flight) obj;
-        return compareTo(flight) == 0;
+        Cruise cruise = (Cruise) obj;
+        return compareTo(cruise) == 0;
     }
 
     public String toString(){
-        String toReturn = "Flight " + flightID + " with " + flightSections.size() + " flightSections flies from " +
+        String toReturn = "Flight " + cruiseID + " with " + sections.size() + " sections flies from " +
                 origin + " to " + destination + " on " + date.getMonth() + "/" +
                 date.getDay() + "/" + date.getYear() +", " +date.getHour()+ ":" + date.getMinute() + " ;\n";
-        for (FlightSection flightSection : flightSections){
-            toReturn += "\t" + flightSection.getSeatCount() + "\n";
+        for (CabinSection section : sections){
+            toReturn += "\t" + section.getSeatCount() + "\n";
         }
         return toReturn;
     }

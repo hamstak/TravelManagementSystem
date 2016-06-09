@@ -5,7 +5,7 @@ import airline.Airport;
 import airline.Flight;
 import airline.factories.*;
 import airline.seats.SeatClass;
-import airline.seats.Section;
+import airline.seats.FlightSection;
 import interfaces.*;
 import utility.TravelSystemDate;
 import utility.UserUtil;
@@ -17,7 +17,7 @@ public class AirSystemManager implements SystemManager {
     private static final String[] MENU = {"Create an Airport ",
                                           "Create an Airline ",
                                           "Create a Flight",
-                                          "Create a Section",
+                                          "Create a FlightSection",
                                           "Find Available Flights",
                                           "Book seat",
                                           "Go back"};
@@ -63,12 +63,12 @@ public class AirSystemManager implements SystemManager {
 
     public void createSection(String airline, String flightID, int rows, int cols, SeatClass s){
         if (!airlineFactory.getCompanies().contains(airline)){
-            System.out.println("Section not created: Airline " + airline + " not found!");
+            System.out.println("FlightSection not created: Airline " + airline + " not found!");
             return;
         }
         for (Flight flight : flightFactory.getTrips()){
-            if (flight.getID().compareTo(flightID) == 0 && flight.checkSeats(s) == null){
-                flight.addSection(new Section(null, null, null, null));
+            if (flight.getID().compareTo(flightID) == 0 && flight.checkSeats(new FlightSection(s, null, 0, 0)) == null){
+                flight.addSection(new FlightSection(null, null, 0, 0));
             }
         }
     }
@@ -89,10 +89,11 @@ public class AirSystemManager implements SystemManager {
 
     public void bookSeat(String flightID, SeatClass s, int row, char col){
         int column = Character.isLowerCase(col) ? col - 39 : col - 65;
+        FlightSection fake = new FlightSection(s, null, 0, 0);
         for(Flight flight : flightFactory.getTrips()){
             if(flightID.compareTo(flight.getID()) == 0){
-                if (flight.checkSeats(s) != null && flight.checkSeats(s).check(row, column) && !flight.checkSeats(s).isTaken(row, column)) {
-                    flight.checkSeats(s).takeSeat(row, column);
+                if (flight.checkSeats(fake) != null && flight.checkSeats(fake).check(row, column) && !flight.checkSeats(fake).isTaken(row, column)) {
+                    flight.checkSeats(fake).takeSeat(row, column);
                     return;
                 }else{
                     System.out.println("Seat not booked: Seat already taken!");

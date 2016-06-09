@@ -1,4 +1,4 @@
-package menuSystem;
+package interfaces;
 
 import java.util.HashMap;
 

@@ -1,6 +1,7 @@
 package airline.factories;
 
 import airline.Airline;
+import interfaces.CompanyFactory;
 
 import java.util.ArrayList;
 

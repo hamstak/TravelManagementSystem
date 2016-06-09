@@ -1,5 +1,5 @@
 import menuSystem.DefaultSystemManager;
-import menuSystem.SystemManager;
+import interfaces.SystemManager;
 
 import java.util.HashMap;
 

@@ -1,4 +1,4 @@
-package airline.factories;
+package interfaces;
 
 import java.util.ArrayList;
 

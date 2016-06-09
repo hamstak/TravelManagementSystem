@@ -1,20 +1,23 @@
-package airline;
+package sealine;
 
 import interfaces.Line;
 
-public class Airline implements Comparable<Airline>, Line {
+/**
+ * Created by moth on 6/7/16.
+ */
+public class Sealine implements Line, Comparable<Sealine> {
     private String name;
 
-    public Airline(String name){
-        this.name = name;
+    public Sealine(String n){
+        name = n;
     }
-
-    public String getName(){
+    @Override
+    public String getName() {
         return name;
     }
 
     @Override
-    public int compareTo(Airline o) {
+    public int compareTo(Sealine o) {
         return name.compareTo(o.name);
     }
 
@@ -26,11 +29,11 @@ public class Airline implements Comparable<Airline>, Line {
             }
             return false;
         }
-        Airline airline = (Airline) obj;
+        Sealine airline = (Sealine) obj;
         return name.equals(airline.name);
     }
 
     public String toString(){
-        return "Airline : " + name;
+        return "Sealine : " + name;
     }
 }

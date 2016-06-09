@@ -1,14 +1,14 @@
 package interfaces;
 
 
+import airline.seats.FlightSection;
 import airline.seats.SeatClass;
-import airline.seats.Section;
 
 public interface Trip<T> {
     int compareTo(T t);
-    void addSection(Section s);
+    void addSection(FlightSection s);
     int seatCount();
-    Section checkSeats(SeatClass s);
+    Section checkSeats(Section s);
     String getID();
     String getOrigin();
     String getDestination();

@@ -1,21 +1,24 @@
-package airline;
+package sealine;
 
 import interfaces.Port;
 
 /**
- * Created by moth on 5/22/16.
+ * Created by moth on 6/7/16.
  */
-public class Airport implements Comparable<Airport>, Port {
+public class Seaport implements Port , Comparable<Seaport>{
     private String name;
 
-    public Airport(String name){
-        this.name = name;
+    public Seaport(String n){
+        name = n;
     }
 
-    public String getName(){ return this.name; }
+    @Override
+    public String getName() {
+        return name;
+    }
 
     @Override
-    public int compareTo(Airport o) {
+    public int compareTo(Seaport o) {
         return name.compareTo(o.name);
     }
 
@@ -29,11 +32,13 @@ public class Airport implements Comparable<Airport>, Port {
             }
             return false;
         }
-        Airport other = (Airport) obj;
+        Seaport other = (Seaport) obj;
         return name.equals(other.name);
     }
 
     public String toString(){
-        return "Airport: " + name;
+        return "Seaport: " + name;
     }
+
+
 }

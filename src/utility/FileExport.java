@@ -14,9 +14,9 @@ public class FileExport {
         result += "]{";
         for(Airline line : lines){
             for(Flight flight : flights){
-                result += line.getAirlineName() + "[" + flight.getID() + "|" + flight.getYear() + ", " +
-                        flight.getMonth() + ", " + flight.getDay() + ", " + flight.getHour() + ", " + flight.getMinute() +
-                        "|" + flight.getOrigin() + "|" + flight.getDestination() + "["; //add sections, costs, etc. ]
+           //     result += line.getName() + "[" + flight.getID() + "|" + flight.getYear() + ", " +
+           //             flight.getMonth() + ", " + flight.getDay() + ", " + flight.getHour() + ", " + flight.getMinute() +
+                //            "|" + flight.getOrigin() + "|" + flight.getDestination() + "["; //add sections, costs, etc. ]
             }
         }
         result += "]}";
